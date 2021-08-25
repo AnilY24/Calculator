@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+  </head>
+  <body>
+    <p> Hello World </p>
+    <input type="number" id="sayi1" value="" placeholder="sayı 1">
+    <input type="number" id="sayi2" value="" placeholder="sayı 2">
+    <select id="islem">
+      <option value="1"> toplama </option>
+      <option value="2"> çıkarma </option>
+      <option value="3"> çarpma </option>
+      <option value="4"> bölme </option>
+    </select>
+    <button type="button" id="sonuc"> sonuç gör </button>
+    <p></p>
+    <script type="text/javascript">
+      var toplama=function(sayi1,sayi2){
+        return sayi1+sayi2;
+      }
+      var cikarma=function(sayi1,sayi2){
+        return sayi1-sayi2;
+      }
+      var carpma=function(sayi1,sayi2){
+        return sayi1*sayi2;
+      }
+      var bolme=function(sayi1,sayi2){
+        return sayi1/sayi2;
+      }
+
+      var sonucbutton=document.getElementById("sonuc");
+      sonucbutton.onclick=function(){
+        var islem=document.getElementById("islem").value;
+        var sayi1=parseInt(document.getElementById("sayi1").value);
+        var sayi2=parseInt(document.getElementById("sayi2").value);
+
+        if(islem=="1"){
+          var sonuc=toplama(sayi1,sayi2);
+        }
+
+        if(islem=="2"){
+          var sonuc=cikarma(sayi1,sayi2);
+        }
+
+        if(islem=="3"){
+          var sonuc=carpma(sayi1,sayi2);
+        }
+
+        if(islem=="4"){
+          var sonuc=bolme(sayi1,sayi2)
+        }
+
+        alert(sonuc);
+      }
+
+    </script>
+  </body>
+</html>
